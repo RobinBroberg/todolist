@@ -1,0 +1,13 @@
+#root {
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.container {
+  display: flex;
+  width: 600px;
+}
+
+input {
+  min-width: 350px;
+}

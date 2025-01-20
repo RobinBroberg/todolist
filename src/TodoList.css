@@ -1,0 +1,54 @@
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  background-color: rgb(212, 210, 210);
+  justify-content: space-between;
+  padding: 3px;
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.listDiv {
+  flex-wrap: wrap;
+}
+
+.idSpan {
+  border: 1px solid #111827;
+  border-radius: 5px;
+  padding: 3px;
+  margin-right: 5px;
+}
+
+.done {
+  text-decoration: line-through;
+  color: #6b7280;
+  padding: 3px;
+}
+
+.not-done {
+  color: #111827;
+  padding: 3px;
+}
+
+.checkmark {
+  color: #111827;
+}
+.container {
+  flex-direction: column;
+}
+
+li span {
+  word-break: break-word;
+}
+
+li div {
+  display: flex;
+  gap: 5px;
+}
