@@ -17,13 +17,7 @@ li {
 
 .listDiv {
   flex-wrap: wrap;
-}
-
-.idSpan {
-  border: 1px solid #111827;
-  border-radius: 5px;
-  padding: 3px;
-  margin-right: 5px;
+  font-size: 18px;
 }
 
 .done {
@@ -51,4 +45,45 @@ li span {
 li div {
   display: flex;
   gap: 5px;
+}
+
+.doneButton {
+  background-color: #fbc02d;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.doneButton:hover {
+  background-color: #f9a825;
+  transform: scale(1.05);
+}
+
+.doneButton.done2 {
+  background-color: #4caf50;
+  color: white;
+}
+
+.doneButton.done2:hover {
+  background-color: #45a049;
+}
+
+.deleteButton {
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.deleteButton:hover {
+  background-color: #b32f2d;
+  transform: scale(1.05);
 }

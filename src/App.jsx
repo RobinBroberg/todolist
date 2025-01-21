@@ -1,11 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import TodoList from "./TodoList";
 
 function App() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(() => {
+    const localValue = localStorage.getItem("todos");
+    if (localValue === null) return [];
+    return JSON.parse(localValue);
+  });
+
   const [inputValue, setInputValue] = useState("");
-  const [lastId, setLastId] = useState(0);
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
 
   function handleChange(e) {
     setInputValue(e.target.value);
@@ -19,12 +27,10 @@ function App() {
 
   function handleAddTodo() {
     if (inputValue.trim() === "") return;
-    const newId = lastId + 1;
     setTodos((todos) => [
       ...todos,
-      { title: inputValue, id: newId, done: false },
+      { title: inputValue, id: crypto.randomUUID(), done: false },
     ]);
-    setLastId(newId);
     setInputValue("");
   }
 
@@ -49,7 +55,9 @@ function App() {
         onChange={handleChange}
         onKeyDown={keyDown}
       />
-      <button onClick={handleAddTodo}>Add</button>
+      <button className="addButton" onClick={handleAddTodo}>
+        Add
+      </button>
       <br />
       <TodoList
         todos={todos}

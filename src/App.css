@@ -10,4 +10,10 @@
 
 input {
   min-width: 350px;
+  font-size: 16px;
+}
+
+.addButton {
+  background-color: rgb(212, 210, 210);
+  color: #111827;
 }

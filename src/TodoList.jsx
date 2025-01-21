@@ -8,9 +8,6 @@ export default function TodoList({ todos, updateStatus, deleteTodo }) {
         {todos.map((todo) => (
           <li key={todo.id}>
             <div className="listDiv">
-              <span className={`${todo.done ? "done" : "not-done"} idSpan`}>
-                ID: {todo.id}
-              </span>
               <span className={todo.done ? "done" : "not-done"}>
                 {todo.title}
               </span>
@@ -19,10 +16,18 @@ export default function TodoList({ todos, updateStatus, deleteTodo }) {
               <span className="checkmark">
                 {todo.done ? <IoMdCheckmark size={25} /> : ""}
               </span>
-              <button onClick={() => updateStatus(todo.id, todo.done)}>
+              <button
+                className={`doneButton ${todo.done ? "done2" : ""}`}
+                onClick={() => updateStatus(todo.id, todo.done)}
+              >
                 {todo.done ? "Undo" : "Done"}
               </button>
-              <button onClick={() => deleteTodo(todo.id)}>Delete</button>
+              <button
+                className="deleteButton"
+                onClick={() => deleteTodo(todo.id)}
+              >
+                Delete
+              </button>
             </div>
           </li>
         ))}
